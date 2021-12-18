@@ -16,10 +16,34 @@ html {
   overflow-x: hidden;
 }
 
+#nav-toggler {
+  -webkit-appearance: none;
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 1010;
+  font-size: 3rem;
+}
+
+#nav-toggler:checked {
+  transform: rotate(180deg);
+}
+
+#nav-toggler:checked::before {
+  content: '\f00d';
+  color: #fff;
+  transition: .2s linear .2s;
+}
+
+#nav-toggler:checked ~ .navbar {
+  left: 0;
+}
+
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: -110%;
   width: 100%;
   z-index: 1000;
   display: flex;
